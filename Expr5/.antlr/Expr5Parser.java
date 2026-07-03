@@ -28,7 +28,7 @@ public class Expr5Parser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'print'", "'\"~[\"\\r\\n]*\"'"
+			null, "'print'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
