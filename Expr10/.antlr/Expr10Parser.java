@@ -16,7 +16,8 @@ public class Expr10Parser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		PRINT=1, CADENA=2, PARENTESIS_ABRE=3, PARENTESIS_CIERRA=4, WS=5;
+		PRINT=1, CADENA=2, PARENTESIS_ABRE=3, PARENTESIS_CIERRA=4, PUNTO_COMA=5, 
+		WS=6;
 	public static final int
 		RULE_root = 0, RULE_expr10 = 1;
 	private static String[] makeRuleNames() {
@@ -28,13 +29,14 @@ public class Expr10Parser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'print'", "'\"~[\"\\r\\n]*\"'", "'('", "')'"
+			null, "'print'", null, "'('", "')'", "';'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "PRINT", "CADENA", "PARENTESIS_ABRE", "PARENTESIS_CIERRA", "WS"
+			null, "PRINT", "CADENA", "PARENTESIS_ABRE", "PARENTESIS_CIERRA", "PUNTO_COMA", 
+			"WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -154,7 +156,7 @@ public class Expr10Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
+		"\u0004\u0001\u0006\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
 		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
 		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
 		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001"+

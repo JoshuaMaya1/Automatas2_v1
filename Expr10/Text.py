@@ -1,7 +1,7 @@
 #Importa ANTLR4 para funciones
 from antlr4 import*
 
-from Expr9Lexer import Expr9Lexer
+from Expr10Lexer import Expr10Lexer
 
 import sys;
 
@@ -12,7 +12,7 @@ input_stream = FileStream(archivo)
 
 
 
-##lexer = Expr10Lexer(InputStream(input("?")))
+lexer = Expr10Lexer(InputStream(input("?")))
 lexer = Expr10Lexer(input_stream)
 
 tokens = CommonTokenStream(lexer)

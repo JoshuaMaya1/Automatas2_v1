@@ -1,7 +1,7 @@
 #Importa ANTLR4 para funciones
 from antlr4 import*
 
-from Expr4Lexer import Expr4Lexer
+from Expr6Lexer import Expr6Lexer
 
 import sys;
 
@@ -12,8 +12,8 @@ import sys;
 
 
 
-lexer = Expr4Lexer(InputStream(input("?")))
-##lexer = Expr4Lexer(input_stream)
+lexer = Expr6Lexer(InputStream(input("?")))
+##lexer = Expr6Lexer(input_stream)
 
 tokens = CommonTokenStream(lexer)
 tokens.fill()
