@@ -1,19 +1,19 @@
 #Importa ANTLR4 para funciones
 from antlr4 import*
 
-from Expr1Lexer import Expr1Lexer
+from Expr2Lexer import Expr2Lexer
 
 import sys;
 
 #Lo que obtiene es la entrada, analiza el texto y lo separa en tokens
 
-##archivo = sys.argv[1] if len(sys.argv) > 1 else "prueba.txt"
-##input_stream = FileStream(archivo)
+archivo = sys.argv[1] if len(sys.argv) > 1 else "prueba.txt"
+input_stream = FileStream(archivo)
 
 
 
-lexer = Expr1Lexer(InputStream(input("?")))
-##lexer = Expr1Lexer(input_stream)
+##lexer = Expr2Lexer(InputStream(input("?")))
+lexer = Expr2Lexer(input_stream)
 
 tokens = CommonTokenStream(lexer)
 tokens.fill()
