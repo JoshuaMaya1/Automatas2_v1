@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr9/Expr9.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/competencia3/Ejercicio9/Expr9.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,10 +18,10 @@ public class Expr9Parser extends Parser {
 	public static final int
 		IF=1, NUM=2, ID=3, MAYOR=4, PARENTESIS_IZQ=5, PARENTESIS_DER=6, WS=7;
 	public static final int
-		RULE_root = 0, RULE_expr9 = 1;
+		RULE_root = 0, RULE_expr9 = 1, RULE_valor = 2;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"root", "expr9"
+			"root", "expr9", "valor"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -107,9 +107,9 @@ public class Expr9Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(4);
+			setState(6);
 			expr9();
-			setState(5);
+			setState(7);
 			match(EOF);
 			}
 		}
@@ -126,7 +126,16 @@ public class Expr9Parser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Expr9Context extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(Expr9Parser.EOF, 0); }
+		public TerminalNode IF() { return getToken(Expr9Parser.IF, 0); }
+		public TerminalNode PARENTESIS_IZQ() { return getToken(Expr9Parser.PARENTESIS_IZQ, 0); }
+		public List<ValorContext> valor() {
+			return getRuleContexts(ValorContext.class);
+		}
+		public ValorContext valor(int i) {
+			return getRuleContext(ValorContext.class,i);
+		}
+		public TerminalNode MAYOR() { return getToken(Expr9Parser.MAYOR, 0); }
+		public TerminalNode PARENTESIS_DER() { return getToken(Expr9Parser.PARENTESIS_DER, 0); }
 		public Expr9Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -139,8 +148,58 @@ public class Expr9Parser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7);
-			match(EOF);
+			setState(9);
+			match(IF);
+			setState(10);
+			match(PARENTESIS_IZQ);
+			setState(11);
+			valor();
+			setState(12);
+			match(MAYOR);
+			setState(13);
+			valor();
+			setState(14);
+			match(PARENTESIS_DER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class ValorContext extends ParserRuleContext {
+		public TerminalNode NUM() { return getToken(Expr9Parser.NUM, 0); }
+		public TerminalNode ID() { return getToken(Expr9Parser.ID, 0); }
+		public ValorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_valor; }
+	}
+
+	public final ValorContext valor() throws RecognitionException {
+		ValorContext _localctx = new ValorContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_valor);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(16);
+			_la = _input.LA(1);
+			if ( !(_la==NUM || _la==ID) ) {
+			_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -155,13 +214,18 @@ public class Expr9Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0007\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
-		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
-		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001"+
-		"\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000"+
-		"\u0000\u0007\b\u0005\u0000\u0000\u0001\b\u0003\u0001\u0000\u0000\u0000"+
-		"\u0000";
+		"\u0004\u0001\u0007\u0013\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0002\u0002\u0007\u0002\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0000\u0000\u0003\u0000\u0002\u0004"+
+		"\u0000\u0001\u0001\u0000\u0002\u0003\u000f\u0000\u0006\u0001\u0000\u0000"+
+		"\u0000\u0002\t\u0001\u0000\u0000\u0000\u0004\u0010\u0001\u0000\u0000\u0000"+
+		"\u0006\u0007\u0003\u0002\u0001\u0000\u0007\b\u0005\u0000\u0000\u0001\b"+
+		"\u0001\u0001\u0000\u0000\u0000\t\n\u0005\u0001\u0000\u0000\n\u000b\u0005"+
+		"\u0005\u0000\u0000\u000b\f\u0003\u0004\u0002\u0000\f\r\u0005\u0004\u0000"+
+		"\u0000\r\u000e\u0003\u0004\u0002\u0000\u000e\u000f\u0005\u0006\u0000\u0000"+
+		"\u000f\u0003\u0001\u0000\u0000\u0000\u0010\u0011\u0007\u0000\u0000\u0000"+
+		"\u0011\u0005\u0001\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
