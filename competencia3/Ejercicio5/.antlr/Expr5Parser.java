@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr5/Expr5.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/competencia3/Ejercicio5/Expr5.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,10 +18,10 @@ public class Expr5Parser extends Parser {
 	public static final int
 		PRINT=1, CADENA=2, WS=3;
 	public static final int
-		RULE_expr5 = 0;
+		RULE_root = 0, RULE_expr5 = 1;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"expr5"
+			"root", "expr5"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -89,21 +89,26 @@ public class Expr5Parser extends Parser {
 	}
 
 	@SuppressWarnings("CheckReturnValue")
-	public static class Expr5Context extends ParserRuleContext {
+	public static class RootContext extends ParserRuleContext {
+		public Expr5Context expr5() {
+			return getRuleContext(Expr5Context.class,0);
+		}
 		public TerminalNode EOF() { return getToken(Expr5Parser.EOF, 0); }
-		public Expr5Context(ParserRuleContext parent, int invokingState) {
+		public RootContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_expr5; }
+		@Override public int getRuleIndex() { return RULE_root; }
 	}
 
-	public final Expr5Context expr5() throws RecognitionException {
-		Expr5Context _localctx = new Expr5Context(_ctx, getState());
-		enterRule(_localctx, 0, RULE_expr5);
+	public final RootContext root() throws RecognitionException {
+		RootContext _localctx = new RootContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_root);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(2);
+			setState(4);
+			expr5();
+			setState(5);
 			match(EOF);
 			}
 		}
@@ -118,11 +123,47 @@ public class Expr5Parser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
+	public static class Expr5Context extends ParserRuleContext {
+		public TerminalNode PRINT() { return getToken(Expr5Parser.PRINT, 0); }
+		public TerminalNode CADENA() { return getToken(Expr5Parser.CADENA, 0); }
+		public Expr5Context(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expr5; }
+	}
+
+	public final Expr5Context expr5() throws RecognitionException {
+		Expr5Context _localctx = new Expr5Context(_ctx, getState());
+		enterRule(_localctx, 2, RULE_expr5);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(7);
+			match(PRINT);
+			setState(8);
+			match(CADENA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public static final String _serializedATN =
-		"\u0004\u0001\u0003\u0005\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0003\u0000\u0002\u0001"+
-		"\u0000\u0000\u0000\u0002\u0003\u0005\u0000\u0000\u0001\u0003\u0001\u0001"+
-		"\u0000\u0000\u0000\u0000";
+		"\u0004\u0001\u0003\u000b\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\b\u0000\u0004\u0001"+
+		"\u0000\u0000\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003"+
+		"\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001"+
+		"\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b\t\u0005\u0002\u0000"+
+		"\u0000\t\u0003\u0001\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
