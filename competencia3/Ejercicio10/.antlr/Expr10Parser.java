@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr10/Expr10.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/competencia3/Ejercicio10/Expr10.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -127,7 +127,11 @@ public class Expr10Parser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Expr10Context extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(Expr10Parser.EOF, 0); }
+		public TerminalNode PRINT() { return getToken(Expr10Parser.PRINT, 0); }
+		public TerminalNode PARENTESIS_ABRE() { return getToken(Expr10Parser.PARENTESIS_ABRE, 0); }
+		public TerminalNode CADENA() { return getToken(Expr10Parser.CADENA, 0); }
+		public TerminalNode PARENTESIS_CIERRA() { return getToken(Expr10Parser.PARENTESIS_CIERRA, 0); }
+		public TerminalNode PUNTO_COMA() { return getToken(Expr10Parser.PUNTO_COMA, 0); }
 		public Expr10Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -141,7 +145,15 @@ public class Expr10Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(7);
-			match(EOF);
+			match(PRINT);
+			setState(8);
+			match(PARENTESIS_ABRE);
+			setState(9);
+			match(CADENA);
+			setState(10);
+			match(PARENTESIS_CIERRA);
+			setState(11);
+			match(PUNTO_COMA);
 			}
 		}
 		catch (RecognitionException re) {
@@ -156,13 +168,15 @@ public class Expr10Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0006\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
-		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
-		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001"+
-		"\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000"+
-		"\u0000\u0007\b\u0005\u0000\u0000\u0001\b\u0003\u0001\u0000\u0000\u0000"+
-		"\u0000";
+		"\u0004\u0001\u0006\u000e\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0002\u0000"+
+		"\u0002\u0000\u0000\u000b\u0000\u0004\u0001\u0000\u0000\u0000\u0002\u0007"+
+		"\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001\u0000\u0005\u0006"+
+		"\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000\u0000\u0007\b\u0005"+
+		"\u0001\u0000\u0000\b\t\u0005\u0003\u0000\u0000\t\n\u0005\u0002\u0000\u0000"+
+		"\n\u000b\u0005\u0004\u0000\u0000\u000b\f\u0005\u0005\u0000\u0000\f\u0003"+
+		"\u0001\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
