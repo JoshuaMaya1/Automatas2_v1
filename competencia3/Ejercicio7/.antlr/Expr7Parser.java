@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr7/Expr7.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/competencia3/Ejercicio7/Expr7.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -125,7 +125,16 @@ public class Expr7Parser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Expr7Context extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(Expr7Parser.EOF, 0); }
+		public TerminalNode INT() { return getToken(Expr7Parser.INT, 0); }
+		public TerminalNode ID() { return getToken(Expr7Parser.ID, 0); }
+		public TerminalNode IGUAL() { return getToken(Expr7Parser.IGUAL, 0); }
+		public TerminalNode NUM() { return getToken(Expr7Parser.NUM, 0); }
+		public List<Expr7Context> expr7() {
+			return getRuleContexts(Expr7Context.class);
+		}
+		public Expr7Context expr7(int i) {
+			return getRuleContext(Expr7Context.class,i);
+		}
 		public Expr7Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -136,10 +145,53 @@ public class Expr7Parser extends Parser {
 		Expr7Context _localctx = new Expr7Context(_ctx, getState());
 		enterRule(_localctx, 2, RULE_expr7);
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(7);
-			match(EOF);
+			setState(20);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(7);
+				match(INT);
+				setState(8);
+				match(ID);
+				setState(9);
+				match(IGUAL);
+				setState(10);
+				match(NUM);
+				}
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(11);
+				match(INT);
+				setState(12);
+				match(ID);
+				setState(13);
+				expr7();
+				setState(14);
+				match(IGUAL);
+				setState(15);
+				match(NUM);
+				setState(16);
+				expr7();
+				}
+				break;
+			case 3:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(18);
+				match(NUM);
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(19);
+				match(ID);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -154,13 +206,22 @@ public class Expr7Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
-		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
-		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001"+
-		"\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000"+
-		"\u0000\u0007\b\u0005\u0000\u0000\u0001\b\u0003\u0001\u0000\u0000\u0000"+
-		"\u0000";
+		"\u0004\u0001\u0005\u0017\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u0015\b\u0001"+
+		"\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0017\u0000\u0004"+
+		"\u0001\u0000\u0000\u0000\u0002\u0014\u0001\u0000\u0000\u0000\u0004\u0005"+
+		"\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001"+
+		"\u0001\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b\t\u0005\u0003"+
+		"\u0000\u0000\t\n\u0005\u0004\u0000\u0000\n\u0015\u0005\u0002\u0000\u0000"+
+		"\u000b\f\u0005\u0001\u0000\u0000\f\r\u0005\u0003\u0000\u0000\r\u000e\u0003"+
+		"\u0002\u0001\u0000\u000e\u000f\u0005\u0004\u0000\u0000\u000f\u0010\u0005"+
+		"\u0002\u0000\u0000\u0010\u0011\u0003\u0002\u0001\u0000\u0011\u0015\u0001"+
+		"\u0000\u0000\u0000\u0012\u0015\u0005\u0002\u0000\u0000\u0013\u0015\u0005"+
+		"\u0003\u0000\u0000\u0014\u0007\u0001\u0000\u0000\u0000\u0014\u000b\u0001"+
+		"\u0000\u0000\u0000\u0014\u0012\u0001\u0000\u0000\u0000\u0014\u0013\u0001"+
+		"\u0000\u0000\u0000\u0015\u0003\u0001\u0000\u0000\u0000\u0001\u0014";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
