@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr8/Expr8.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/competencia3/Ejercicio8/Expr8.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -107,7 +107,7 @@ public class Expr8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(4);
-			expr8();
+			expr8(0);
 			setState(5);
 			match(EOF);
 			}
@@ -125,7 +125,15 @@ public class Expr8Parser extends Parser {
 
 	@SuppressWarnings("CheckReturnValue")
 	public static class Expr8Context extends ParserRuleContext {
-		public TerminalNode EOF() { return getToken(Expr8Parser.EOF, 0); }
+		public TerminalNode NUM() { return getToken(Expr8Parser.NUM, 0); }
+		public TerminalNode ID() { return getToken(Expr8Parser.ID, 0); }
+		public List<Expr8Context> expr8() {
+			return getRuleContexts(Expr8Context.class);
+		}
+		public Expr8Context expr8(int i) {
+			return getRuleContext(Expr8Context.class,i);
+		}
+		public TerminalNode MAYOR_IGUAL() { return getToken(Expr8Parser.MAYOR_IGUAL, 0); }
 		public Expr8Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -133,13 +141,63 @@ public class Expr8Parser extends Parser {
 	}
 
 	public final Expr8Context expr8() throws RecognitionException {
-		Expr8Context _localctx = new Expr8Context(_ctx, getState());
-		enterRule(_localctx, 2, RULE_expr8);
+		return expr8(0);
+	}
+
+	private Expr8Context expr8(int _p) throws RecognitionException {
+		ParserRuleContext _parentctx = _ctx;
+		int _parentState = getState();
+		Expr8Context _localctx = new Expr8Context(_ctx, _parentState);
+		Expr8Context _prevctx = _localctx;
+		int _startState = 2;
+		enterRecursionRule(_localctx, 2, RULE_expr8, _p);
 		try {
+			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(7);
-			match(EOF);
+			setState(10);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case NUM:
+				{
+				setState(8);
+				match(NUM);
+				}
+				break;
+			case ID:
+				{
+				setState(9);
+				match(ID);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+			_ctx.stop = _input.LT(-1);
+			setState(17);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					if ( _parseListeners!=null ) triggerExitRuleEvent();
+					_prevctx = _localctx;
+					{
+					{
+					_localctx = new Expr8Context(_parentctx, _parentState);
+					pushNewRecursionContext(_localctx, _startState, RULE_expr8);
+					setState(12);
+					if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+					setState(13);
+					match(MAYOR_IGUAL);
+					setState(14);
+					expr8(4);
+					}
+					} 
+				}
+				setState(19);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -148,19 +206,41 @@ public class Expr8Parser extends Parser {
 			_errHandler.recover(this, re);
 		}
 		finally {
-			exitRule();
+			unrollRecursionContexts(_parentctx);
 		}
 		return _localctx;
 	}
 
+	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
+		switch (ruleIndex) {
+		case 1:
+			return expr8_sempred((Expr8Context)_localctx, predIndex);
+		}
+		return true;
+	}
+	private boolean expr8_sempred(Expr8Context _localctx, int predIndex) {
+		switch (predIndex) {
+		case 0:
+			return precpred(_ctx, 3);
+		}
+		return true;
+	}
+
 	public static final String _serializedATN =
-		"\u0004\u0001\u0004\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
-		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0000\u0007\u0000\u0004\u0001\u0000\u0000"+
-		"\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001"+
-		"\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000"+
-		"\u0000\u0007\b\u0005\u0000\u0000\u0001\b\u0003\u0001\u0000\u0000\u0000"+
-		"\u0000";
+		"\u0004\u0001\u0004\u0015\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0003\u0001\u000b\b\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0005\u0001"+
+		"\u0010\b\u0001\n\u0001\f\u0001\u0013\t\u0001\u0001\u0001\u0000\u0001\u0002"+
+		"\u0002\u0000\u0002\u0000\u0000\u0014\u0000\u0004\u0001\u0000\u0000\u0000"+
+		"\u0002\n\u0001\u0000\u0000\u0000\u0004\u0005\u0003\u0002\u0001\u0000\u0005"+
+		"\u0006\u0005\u0000\u0000\u0001\u0006\u0001\u0001\u0000\u0000\u0000\u0007"+
+		"\b\u0006\u0001\uffff\uffff\u0000\b\u000b\u0005\u0001\u0000\u0000\t\u000b"+
+		"\u0005\u0002\u0000\u0000\n\u0007\u0001\u0000\u0000\u0000\n\t\u0001\u0000"+
+		"\u0000\u0000\u000b\u0011\u0001\u0000\u0000\u0000\f\r\n\u0003\u0000\u0000"+
+		"\r\u000e\u0005\u0003\u0000\u0000\u000e\u0010\u0003\u0002\u0001\u0004\u000f"+
+		"\f\u0001\u0000\u0000\u0000\u0010\u0013\u0001\u0000\u0000\u0000\u0011\u000f"+
+		"\u0001\u0000\u0000\u0000\u0011\u0012\u0001\u0000\u0000\u0000\u0012\u0003"+
+		"\u0001\u0000\u0000\u0000\u0013\u0011\u0001\u0000\u0000\u0000\u0002\n\u0011";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
