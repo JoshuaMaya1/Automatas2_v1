@@ -1,4 +1,4 @@
-// Generated from c:/Users/joshu/Desktop/Automatas2/Expr6/Expr6.g4 by ANTLR 4.13.1
+// Generated from c:/Users/joshu/Desktop/Sintactico/Automatas2_v1/Expr6/Expr6.g4 by ANTLR 4.13.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
